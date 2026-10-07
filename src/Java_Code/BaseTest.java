@@ -7,23 +7,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTest 
-{
-    protected WebDriver driver;
+public class BaseTest {
+	protected WebDriver driver;
 
-    @BeforeMethod
-    public void setup() 
-    {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get("https://account.proton.me/mail");
-    }
+	@BeforeMethod
+	public void setup() {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get("https://account.proton.me/mail");
+	}
 
-    @AfterMethod
-    public void tearDown() 
-    {
-        driver.quit();
-    }
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
 
 }
